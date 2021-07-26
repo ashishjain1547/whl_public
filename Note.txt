@@ -1,0 +1,41 @@
+1. FOR SPACY MODELS
+
+# download best-matching version of specific model for your spaCy installation
+python -m spacy download en_core_web_sm
+
+# pip install .whl or .tar.gz archive from path or URL
+pip install /Users/you/en_core_web_sm-3.0.0.tar.gz
+pip install /Users/you/en_core_web_sm-3.0.0-py3-none-any.whl
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
+
+
+- - - - - - - - - - - - - - - - - - 
+
+In general, spaCy expects all model packages to follow the naming convention of [lang]_[name]. For our provided pipelines, we divide the name into three components:
+
+-- type: Model capabilities:
+
+--- core: a general-purpose model with tagging, parsing, lemmatization and named entity recognition
+
+--- dep: only tagging, parsing and lemmatization
+
+--- ent: only named entity recognition
+
+--- sent: only sentence segmentation
+
+-- genre: Type of text the model is trained on (e.g. web for web text, news for news text)
+
+-- size: Model size indicator:
+
+--- sm: no word vectors
+
+--- md: reduced word vector table with 20k unique vectors for ~500k words
+
+--- lg: large word vector table with ~500k entries
+
+For example, en_core_web_md is a medium-sized English model trained on written web text (blogs, news, comments), that includes a tagger, a dependency parser, a lemmatizer, a named entity recognizer and a word vector table with 20k unique vectors.
+
+Ref: https://codechina.csdn.net/mirrors/explosion/spacy-models/-/tree/es_core_news_md-3.1.0
+
+- - - - - - - - - - - - - - - - - - 
